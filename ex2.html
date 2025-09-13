@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Размеры экрана</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .screen-info-button {
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .screen-info-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #0056b3, #004494);
+        }
+
+        .screen-info-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <button class="screen-info-button" onclick="showScreenInfo()">
+         Показать размеры экрана
+    </button>
+
+    <script>
+        function showScreenInfo() {
+            // Получаем данные о размерах
+            const screenWidth = screen.width;
+            const screenHeight = screen.height;
+            const availableWidth = screen.availWidth;
+            const availableHeight = screen.availHeight;
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            const colorDepth = screen.colorDepth;
+            const pixelDepth = screen.pixelDepth;
+
+
+            const message =
+                `ИНФОРМАЦИЯ ОБ ЭКРАНЕ:\n\n` +
+                `Разрешение экрана: ${screenWidth} x ${screenHeight} px\n` +
+                `Доступная область: ${availableWidth} x ${availableHeight} px\n` +
+                `Размер окна браузера: ${windowWidth} x ${windowHeight} px\n` +
+                ;
+
+
+            alert(message);
+        }
+    </script>
+</body>
+</html>
